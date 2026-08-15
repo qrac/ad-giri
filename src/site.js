@@ -1,5 +1,5 @@
 /**
- * URLからAD斬りの対象となる正規化済みhostnameを返す。
+ * URLからAD切りの対象となる正規化済みhostnameを返す。
  * @param {string | undefined} value
  * @returns {string | null}
  */

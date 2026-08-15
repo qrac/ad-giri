@@ -1,8 +1,8 @@
-# AD斬り Privacy Policy
+# AD切り Privacy Policy
 
 最終更新日: 2026-08-15
 
-AD斬りはTelemetry、Analytics、外部APIを使用せず、外部サーバーへデータを送信しません。
+AD切りはTelemetry、Analytics、外部APIを使用せず、外部サーバーへデータを送信しません。
 
 ## 保存する情報
 

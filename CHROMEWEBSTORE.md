@@ -1,10 +1,10 @@
-# Chrome Web Store Listing — AD斬り
+# Chrome Web Store Listing — AD切り
 
 > Last Updated: 2026-08-15
 
 ## Store Listing
 
-- Extension Name: AD斬り
+- Extension Name: AD切り
 - Short Description: 広告・トラッカー系通信をデフォルトで斬り、サイトごとにワンクリックで解除します。
 - Category: Productivity
 - Single Purpose: 登録した広告・トラッカー系ドメインへの通信を遮断し、サイト単位のホワイトリストで解除する。
@@ -12,7 +12,7 @@
 
 ### Detailed Description
 
-AD斬りは、登録した広告・トラッカー系ドメインへの通信をデフォルトで遮断する小さなChrome拡張です。
+AD切りは、登録した広告・トラッカー系ドメインへの通信をデフォルトで遮断する小さなChrome拡張です。
 
 緑色のアイコンは通信ブロックが有効な状態です。現在のサイトでアイコンを押すと、そのサイトをホワイトリストへ追加してブロックを解除します。灰色のアイコンをもう一度押すとブロックを再開します。
 

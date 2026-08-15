@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AD斬り",
+  "name": "AD切り",
   "version": "1.0.0",
   "description": "広告・トラッカー系通信をデフォルトで斬り、サイトごとにワンクリックで解除します。",
   "minimum_chrome_version": "120",
