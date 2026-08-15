@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AD斬り 設定</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>AD斬り</h1>
+
+      <section aria-labelledby="allowed-sites-heading">
+        <h2 id="allowed-sites-heading">ホワイトリスト</h2>
+        <p class="description">通信ブロックを解除しているサイトです。</p>
+        <p id="empty-message" hidden>現在、ホワイトリストは空です。</p>
+        <ul id="site-list"></ul>
+      </section>
+
+      <section aria-labelledby="target-domains-heading">
+        <h2 id="target-domains-heading">対象ドメイン</h2>
+        <p id="domain-help" class="description">遮断するドメインを1行につき1件入力してください。空欄にするとすべての通信ブロックを停止します。</p>
+        <form id="domain-form">
+          <label class="visually-hidden" for="domain-input">遮断対象ドメイン</label>
+          <textarea id="domain-input" aria-describedby="domain-help domain-status" rows="10" spellcheck="false"></textarea>
+          <div class="form-actions">
+            <button type="submit">保存</button>
+            <output id="domain-status" role="status" aria-live="polite"></output>
+          </div>
+        </form>
+      </section>
+
+      <section aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading">プライバシー</h2>
+        <ul class="plain-list">
+          <li>外部通信なし</li>
+          <li>Telemetryなし</li>
+          <li>Analyticsなし</li>
+          <li>ページ本文を読み取らない</li>
+          <li>閲覧履歴を収集しない</li>
+        </ul>
+      </section>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

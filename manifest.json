@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "AD斬り",
+  "version": "1.0.0",
+  "description": "広告・トラッカー系通信をデフォルトで斬り、サイトごとにワンクリックで解除します。",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "tabs",
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "このサイトの通信ブロックを解除する",
+    "default_icon": {
+      "16": "icons/on/icon-16.png",
+      "32": "icons/on/icon-32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/on/icon-16.png",
+    "48": "icons/on/icon-48.png",
+    "128": "icons/on/icon-128.png"
+  },
+  "options_page": "src/options/index.html"
+}
