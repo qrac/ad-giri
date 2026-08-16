@@ -1,4 +1,4 @@
-import { updateActionForTab, updateAllActions } from "./action.js";
+import { updateActionForTab } from "./action.js";
 import { initializeBlocking, toggleBlockingForTab } from "./blocking.js";
 import { initializeContextMenu, SETTINGS_MENU_ID } from "./context-menu.js";
 
@@ -16,40 +16,23 @@ function runSafely(task) {
 chrome.runtime.onInstalled.addListener(() => {
   runSafely(async () => {
     await initializeBlocking();
-    await Promise.all([initializeContextMenu(), updateAllActions()]);
+    await initializeContextMenu();
   });
 });
 
 chrome.runtime.onStartup.addListener(() => {
   runSafely(async () => {
     await initializeBlocking();
-    await updateAllActions();
   });
 });
 
+// activeTabでURLへアクセスできるのは、actionを直接クリックした直後のtabだけ。
+// 全タブを列挙してアイコン状態を常時同期する処理は行わない。
 chrome.action.onClicked.addListener((tab) => {
   runSafely(async () => {
     await toggleBlockingForTab(tab);
     await updateActionForTab(tab);
   });
-});
-
-chrome.tabs.onActivated.addListener(({ tabId }) => {
-  runSafely(async () => {
-    await updateActionForTab(await chrome.tabs.get(tabId));
-  });
-});
-
-chrome.tabs.onUpdated.addListener((_tabId, changeInfo, tab) => {
-  if (changeInfo.status === "complete" || changeInfo.url) {
-    runSafely(async () => updateActionForTab(tab));
-  }
-});
-
-chrome.storage.onChanged.addListener((changes, areaName) => {
-  if (areaName === "local" && (changes.allowedHostnames || changes.targetDomains)) {
-    runSafely(updateAllActions);
-  }
 });
 
 chrome.contextMenus.onClicked.addListener((info) => {
