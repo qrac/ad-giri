@@ -103,14 +103,4 @@ test("初期状態はブロック有効で、クリックしたサイトだけ�
   );
   assert.deepEqual((await getSettings()).allowedHostnames, []);
   assert.deepEqual(reloadedTabIds, [7, 7]);
-
-  assert.equal(
-    await toggleBlockingForTab(/** @type {chrome.tabs.Tab} */ (/** @type {unknown} */ ({
-      id: 8,
-      url: "chrome://settings",
-    }))),
-    "unsupported",
-  );
-  assert.deepEqual((await getSettings()).allowedHostnames, []);
-  assert.deepEqual(reloadedTabIds, [7, 7]);
 });

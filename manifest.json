@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "description": "広告・トラッカー系通信をデフォルトで切り、サイトごとにワンクリックで解除します。",
   "minimum_chrome_version": "120",
-  "permissions": ["declarativeNetRequest", "storage", "activeTab", "contextMenus"],
+  "permissions": ["declarativeNetRequest", "storage", "tabs", "contextMenus"],
   "background": {
     "service_worker": "src/background.js",
     "type": "module"

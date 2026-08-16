@@ -35,3 +35,9 @@ export async function updateActionForTab(tab) {
     hostname ? chrome.action.enable(tab.id) : chrome.action.disable(tab.id),
   ]);
 }
+
+/** 全タブのaction状態を更新する。 */
+export async function updateAllActions() {
+  const tabs = await chrome.tabs.query({});
+  await Promise.all(tabs.map(updateActionForTab));
+}
