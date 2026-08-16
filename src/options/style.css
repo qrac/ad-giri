@@ -1,8 +1,10 @@
 :root {
-  color: #075653;
-  background: #fbfffd;
-  font-family: system-ui, sans-serif;
-  font-size: 16px;
+  color-scheme: light dark;
+  color: CanvasText;
+  background: Canvas;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
 }
 
 body {
@@ -11,34 +13,35 @@ body {
 
 main {
   box-sizing: border-box;
-  width: min(100% - 32px, 720px);
-  margin: 48px auto;
+  width: min(100% - 32px, 500px);
+  margin: 2rem auto;
 }
 
 h1 {
-  margin: 0 0 32px;
-  font-size: 2rem;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
 }
 
 section {
-  padding: 24px 0;
-  border-top: 1px solid #bfe4d8;
+  margin-block: 2rem;
+  padding: 1rem;
+  border: 1px solid ButtonBorder;
+  border-radius: 0.5rem;
 }
 
 h2 {
-  margin: 0 0 8px;
-  font-size: 1.125rem;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
 }
 
 .description {
-  margin: 0 0 16px;
-  color: #426966;
+  margin: 0 0 1rem;
+  color: GrayText;
 }
 
-#site-list,
-.plain-list {
+#site-list {
   margin: 0;
-  padding: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
@@ -46,46 +49,69 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  min-height: 48px;
-  border-bottom: 1px solid #dceee8;
+  gap: 1rem;
+  padding: 0.5em 0;
+  border-bottom: 1px solid ButtonBorder;
+}
+
+#site-list li:last-child {
+  border-bottom: 0;
+}
+
+.plain-list {
+  margin: 0;
+  padding-inline-start: 1em;
+}
+
+.plain-list li + li {
+  margin-top: 6px;
 }
 
 textarea {
   box-sizing: border-box;
   width: 100%;
   min-height: 13rem;
-  padding: 12px;
-  border: 1px solid #70aa9d;
-  border-radius: 8px;
-  color: inherit;
-  background: #fff;
-  font: 0.95rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+  padding: 0.75rem;
+  border: 1px solid ButtonBorder;
+  border-radius: 0.375rem;
+  color: FieldText;
+  background: Field;
+  font:
+    0.95rem/1.5 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
   resize: vertical;
 }
 
 textarea:focus-visible,
 button:focus-visible {
-  outline: 3px solid #51d4ad;
+  outline: 2px solid Highlight;
   outline-offset: 2px;
 }
 
 .form-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 1rem;
+  margin-top: 0.75rem;
 }
 
 button {
   min-width: 72px;
-  padding: 8px 14px;
-  border: 1px solid #075653;
-  border-radius: 6px;
-  color: #fff;
-  background: #087b70;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid ButtonBorder;
+  border-radius: 0.375rem;
+  color: ButtonText;
+  background: ButtonFace;
   font: inherit;
   cursor: pointer;
+}
+
+#domain-form button {
+  border-color: Highlight;
+  color: HighlightText;
+  background: Highlight;
 }
 
 button:disabled {
@@ -94,15 +120,12 @@ button:disabled {
 }
 
 #domain-status {
-  color: #426966;
+  color: GrayText;
 }
 
 #domain-status.error {
-  color: #a32323;
-}
-
-.plain-list li + li {
-  margin-top: 6px;
+  color: #b3261e;
+  font-weight: 600;
 }
 
 .visually-hidden {
@@ -118,23 +141,7 @@ button:disabled {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: #d7fff2;
-    background: #092b29;
-  }
-
-  .description,
-  #domain-status {
-    color: #abd5ca;
-  }
-
-  section,
-  #site-list li {
-    border-color: #285d57;
-  }
-
-  textarea {
-    color: inherit;
-    background: #103d39;
+  #domain-status.error {
+    color: #ffb4ab;
   }
 }
