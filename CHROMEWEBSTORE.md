@@ -5,7 +5,7 @@
 ## Store Listing
 
 - Extension Name: AD切り
-- Short Description: 広告・トラッカー系通信をデフォルトで斬り、サイトごとにワンクリックで解除します。
+- Short Description: 広告・トラッカー系通信をデフォルトで切り、サイトごとにワンクリックで解除します。
 - Category: Productivity
 - Single Purpose: 登録した広告・トラッカー系ドメインへの通信を遮断し、サイト単位のホワイトリストで解除する。
 - Primary Language: Japanese
@@ -22,19 +22,19 @@ AD切りは、登録した広告・トラッカー系ドメインへの通信を
 
 ## Graphics & Assets
 
-| Asset | Dimensions | Status | Filename |
-| --- | --- | --- | --- |
-| Store Icon | 128×128 PNG | Ready | `icons/on/icon-128.png` |
-| Screenshot 1 | 1280×800 PNG | Ready | `store-assets/screenshot-1.png` |
+| Asset        | Dimensions   | Status | Filename                        |
+| ------------ | ------------ | ------ | ------------------------------- |
+| Store Icon   | 128×128 PNG  | Ready  | `icons/on/icon-128.png`         |
+| Screenshot 1 | 1280×800 PNG | Ready  | `store-assets/screenshot-1.png` |
 
 ## Permissions Justification
 
-| Permission | Type | Justification |
-| --- | --- | --- |
-| `declarativeNetRequest` | permissions | ユーザーが登録した広告・トラッカー系ドメインへの通信を遮断し、ホワイトリストのサイトでは通信を許可するため。ページ本文は読み取らない。 |
-| `storage` | permissions | 遮断対象ドメインとホワイトリストのhostnameだけを端末内に保存し、ブラウザ再起動後も設定を維持するため。 |
-| `tabs` | permissions | タブ切り替え・ページ遷移時に現在のhostnameを確認してサイトごとのアイコン状態を表示し、クリックで設定変更したタブを再読み込みするため。ページ本文は読み取らない。 |
-| `contextMenus` | permissions | 拡張アイコンの右クリックメニューに設定ページへの入口を1つ表示するため。 |
+| Permission              | Type        | Justification                                                                                                                                                    |
+| ----------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `declarativeNetRequest` | permissions | ユーザーが登録した広告・トラッカー系ドメインへの通信を遮断し、ホワイトリストのサイトでは通信を許可するため。ページ本文は読み取らない。                           |
+| `storage`               | permissions | 遮断対象ドメインとホワイトリストのhostnameだけを端末内に保存し、ブラウザ再起動後も設定を維持するため。                                                           |
+| `tabs`                  | permissions | タブ切り替え・ページ遷移時に現在のhostnameを確認してサイトごとのアイコン状態を表示し、クリックで設定変更したタブを再読み込みするため。ページ本文は読み取らない。 |
+| `contextMenus`          | permissions | 拡張アイコンの右クリックメニューに設定ページへの入口を1つ表示するため。                                                                                          |
 
 `host_permissions` は使用しない。
 
@@ -66,9 +66,9 @@ AD切りは、登録した広告・トラッカー系ドメインへの通信を
 
 ## Version History
 
-| Version | Date | Changes | Status |
-| --- | --- | --- | --- |
-| 1.0.0 | 2026-08-15 | Initial implementation | Draft |
+| Version | Date       | Changes                | Status |
+| ------- | ---------- | ---------------------- | ------ |
+| 1.0.0   | 2026-08-15 | Initial implementation | Draft  |
 
 ## Pre-publish Checklist
 
